@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+RewriteRule ^subscribe?$ index.php?m=subscribe [L]
+RewriteRule ^unsubscribe/(.*)?$ index.php?m=unsubscribe&hash=$1 [L]
+RewriteRule ^rss?$ rss.php [L]
+RewriteRule ^search?$ index.php?m=search [L]
+RewriteRule ^post/(.*)-(.*)?$ index.php?m=post&id=$2 [L]
+RewriteRule ^archive/(.*)-(.*)?$ index.php?m=archive&month=$1&year=$2 [L]
+RewriteRule ^category/(.*)-(.*)?$ index.php?m=category&id=$2 [L]
+RewriteRule ^tag/(.*)?$ index.php?m=tag&tag=$1 [L]
+</IfModule>
